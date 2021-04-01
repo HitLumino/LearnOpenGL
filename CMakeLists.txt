@@ -185,7 +185,7 @@ endmacro()
 # then create a project file per tutorial
 foreach(CHAPTER ${CHAPTERS})
     foreach(DEMO ${${CHAPTER}})
-        file(GLOB SOURCE
+        file(GLOB_RECURSE SOURCE
             "src/${CHAPTER}/${DEMO}/*.h"
             "src/${CHAPTER}/${DEMO}/*.cpp"
             "src/${CHAPTER}/${DEMO}/*.vs"

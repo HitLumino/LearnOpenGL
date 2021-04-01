@@ -218,7 +218,7 @@ int main()
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
     // draw as wireframe
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     // render loop
     // -----------
