@@ -58,28 +58,6 @@ void main()
     // ambient
     vec3 ambient = light.ambient * texture(material.diffuse, TexCoords).rgb;
 
-// //////////////////////
-//
-//     vec3 LightTangent = normalize(cross(vec3(0.f, 0.f, 1.f), light.direction));
-//     vec3 LightBiTangent = normalize(cross(light.direction, LightTangent));
-//     mat4 LightTransform = mat4(vec4(light.direction.xyz, 0.0), vec4(LightTangent.xyz, 0.0), vec4(LightBiTangent.xyz, 0.0), vec4(0.0, 0.0, 0.0, 1.0));
-//     mat4 InvLightTransform = transpose(LightTransform);
-//     vec3 ToLight = normalize(light.position - FragPos);
-//     vec3 LocalToLight = (InvLightTransform * vec4(ToLight.xyz, 0.0)).xyz;
-//
-//     float DotProd = dot(ToLight, light.direction);
-//     float AngleV = acos(DotProd);
-//
-//     // 0...1
-//         float NormAngleV = AngleV / PI + 0.5f;
-//
-//         float AngleH = atan(-LocalToLight.y, -LocalToLight.z);
-//         float NormAngleH = AngleH / (PI * 2.f) + 0.5f;
-//
-//     vec3 multi = texture(ies, vec2(NormAngleV, NormAngleH)).rgb;
-//
-// //////////////////////
-
     // diffuse 
     vec3 norm = normalize(Normal);
     vec3 lightDir = normalize(light.position - FragPos);
